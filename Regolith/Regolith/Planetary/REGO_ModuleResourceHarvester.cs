@@ -166,7 +166,7 @@ namespace Regolith.Common
                     return null;
                 }
 
-                var rate = abundance * Efficiency;
+                var rate = Math.Max(abundance - HarvestThreshold, 0) * Efficiency;
                 if (HarvesterType == 2) //Account for altitude and airspeed
                 {
                     double atmDensity = vessel.atmDensity;
